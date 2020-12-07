@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Ma personne :</h4>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+      <span class="pers_prop">nom:</span> {{ person.nom }} <br> 
+      <span class="pers_prop">age:</span> {{ person.age }} <br> 
+      <span class="pers_prop">index:</span> {{ index }}
+    </p>
+  </div>
+  <div class="card-footer">
+    <button class="btn btn-danger" (click)="onClick()">supprimer</button>
+  </div>
+</div>

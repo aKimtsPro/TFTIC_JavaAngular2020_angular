@@ -1,0 +1,17 @@
+
+<div *ngIf="input === 'personne'">
+    <h2 class="display-6">Les personnes</h2>
+  
+    <button hidden disabled>click hidden</button> 
+    <!-- le disabled et hidden peuvent être modifié directement sur la page -->
+  
+    <div class="container">
+      <div class="row">
+        <app-person-card [person]="personne" [index]="i" (delete)="onDelete($event)" *ngFor="let personne of personList; let i = index"></app-person-card>
+      </div>
+    </div>
+    
+
+  </div>
+
+  
