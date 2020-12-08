@@ -1,0 +1,12 @@
+<h2 class="display-5">Basket Team Manager - correction</h2>
+<p>Mon equipe : {{(team.length === 5) ? '(Complète)':'('+team.length+'/5)'}}</p>
+
+<app-player-info 
+  [player]="player" 
+  [index]="i" 
+  (delete)="onDelete($event)" 
+  *ngFor="let player of team; let i = index"
+>
+</app-player-info>
+<app-add-player (addPlayer)="onAddPlayer($event)" *ngIf="team.length < 5"></app-add-player>
+

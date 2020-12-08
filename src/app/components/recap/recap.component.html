@@ -1,0 +1,11 @@
+<p [class]="p_class" [hidden]="showP" #parag>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate officiis repellendus consequuntur quae animi accusantium voluptas possimus maxime voluptatibus ratione?</p>
+<p [ngClass]="{'green' : showP,'underlined' : showP}" class="trucmuche"> {{ parag.innerText }} </p>
+
+<button (click)="onClick()">click me</button><br>
+
+<label for="h1_input" [ngStyle]="{'background-color': colorPicked}">Valeur à mettre dans le h1</label><br>
+<input id="h1_input" type="text" [(ngModel)]="input" [ngClass]="{invalid: input.length < 3 }" (mouseover)="onMouseOver()" (change)="onChange()"><br>
+<label for="color_pick">Choississez une couleur</label><br>
+<input type="color" name="color_pick" id="color_pick" [(ngModel)]="colorPicked">
+
+<app-person-list [input]="input"></app-person-list>

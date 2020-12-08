@@ -9,21 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'recapAngular';
-  p_class = 'green';
+  
   input: string = '';
-  showP = 5 > 4;
-  colorPicked = "#ffffff" ;
 
-  keyValueClasses= {
-    'green' : this.showP,
-    'underlined' : true
+  onInputChanged(value: string){
+    this.input = value;
   }
 
-  onClick(){
-    console.log(this.colorPicked);
-  }
-
-  onMouseOver(){
-    console.log("salut");
-  }
 }

@@ -5,11 +5,9 @@
     <button hidden disabled>click hidden</button> 
     <!-- le disabled et hidden peuvent être modifié directement sur la page -->
   
-    <div class="container">
       <div class="row">
-        <app-person-card [person]="personne" [index]="i" (delete)="onDelete($event)" *ngFor="let personne of personList; let i = index"></app-person-card>
+        <app-person-card class="col-md-4" [person]="personne" [index]="i" (delete)="onDelete($event)" *ngFor="let personne of personList; let i = index"></app-person-card>
       </div>
-    </div>
     
 
   </div>
