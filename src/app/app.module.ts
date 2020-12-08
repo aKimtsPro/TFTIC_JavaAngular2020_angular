@@ -10,7 +10,10 @@ import { BasketModule } from './basket/basket.module';
 import { RecapComponent } from './components/recap/recap.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FormDemoComponent } from './components/form-demo/form-demo.component'
+import { FormDemoComponent } from './components/form-demo/form-demo.component';
+import { DemoServiceHttpComponent } from './components/demo-service-http/demo-service-http.component'
+import { ApiConsumeService } from './services/api-consume.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,14 +23,16 @@ import { FormDemoComponent } from './components/form-demo/form-demo.component'
     RecapComponent,
     NavComponent,
     HeaderComponent,
-    FormDemoComponent
+    FormDemoComponent,
+    DemoServiceHttpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BasketModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [], 
   bootstrap: [AppComponent]

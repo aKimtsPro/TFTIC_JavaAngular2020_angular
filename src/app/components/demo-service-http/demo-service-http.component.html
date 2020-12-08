@@ -1,0 +1,9 @@
+<p>demo-service-http works!</p>
+
+<button class="btn btn-info" (click)="onClick()">get posts</button>
+
+<div *ngFor="let post of postList">
+    <p><span>id : </span> {{post.id}} </p>
+    <p><span>userId : </span> {{post.userId}} </p>
+    <p><span>title : </span> {{post.title}} </p>
+</div>

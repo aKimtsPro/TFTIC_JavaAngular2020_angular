@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Basketteur } from 'src/app/models/Basketteur.model';
 
 @Component({
@@ -8,37 +9,26 @@ import { Basketteur } from 'src/app/models/Basketteur.model';
 })
 export class AddPlayerComponent implements OnInit {
 
-  nom: string;
-  prenom: string;
-  age: number;
-  taille: number;
+  basketForm: FormGroup;
 
   @Output()
   addPlayer = new EventEmitter<Basketteur>();
 
-  constructor() { }
+  constructor(private builder: FormBuilder) {
+    this.basketForm = builder.group({
+      nom: new FormControl(null, [Validators.minLength(4), Validators.required]),
+      prenom: new FormControl(null, [Validators.minLength(4), Validators.required]),
+      age: new FormControl(null, [Validators.min(18), Validators.max(45), Validators.required]),
+      taille: new FormControl(null, [Validators.min(166), Validators.required])
+    });
+  }
 
   ngOnInit(): void {
   }
 
-  isValid(basketteur: Basketteur){
-
-    if( basketteur == null || basketteur == undefined )
-      return false;
-
-    if( basketteur.nom == undefined || basketteur.prenom == undefined )
-      return false;
-
-    return basketteur.nom.length >= 4 
-        && basketteur.prenom.length >= 4
-        && basketteur.age >= 18 && basketteur.age <= 45
-        && basketteur.taille > 165;
-  }
-
-  onClick(){
-    let player = new Basketteur(this.nom,this.prenom,this.age,this.taille);
-    if( this.isValid(player) ){
-      this.addPlayer.emit(player);
+  onSubmit(){
+    if(this.basketForm.valid){
+      this.addPlayer.emit(this.basketForm.value);
     }
   }
 

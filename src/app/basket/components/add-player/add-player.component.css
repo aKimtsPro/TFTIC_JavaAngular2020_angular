@@ -2,3 +2,12 @@
     padding: 5px;
     background-color: lightblue;
 }
+
+input.ng-invalid.ng-dirty{
+    background-color: rgb(255, 159, 159);
+    color: white;
+}
+
+input.ng-pristine{
+    border: 2px dashed rgb(207, 195, 138);
+}
