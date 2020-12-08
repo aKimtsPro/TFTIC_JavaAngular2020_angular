@@ -1,0 +1,25 @@
+<h2 class="display-4">Les FormGroup</h2>
+<h3 class="display-5">Liste de personnes</h3>
+
+<div class="container">
+    <div class="row" *ngFor="let pers of personList">
+        <div class="col-6">
+            <p>nom : {{pers.nom}}</p>
+        </div>
+        <div class="col-6">
+            <p>age: {{pers.age}}</p>
+        </div>
+    </div>
+</div>
+
+
+<h3 class="display-5">Formulaire</h3>
+
+<form [formGroup]="personForm" (submit)="onSubmit()">
+    <label for="nom">nom</label><br>
+    <input id="nom" type="text" formControlName="nom"><br>
+    <label for="age">age</label><br>
+    <input id="age" type="number" formControlName="age"><br>
+    <button type="submit" class="btn btn-success" *ngIf="personForm.valid">submit</button>
+    <button class="btn btn-info" (click)="seeForm()">see form</button>
+</form>

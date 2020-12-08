@@ -3,13 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PersonListComponent } from './components/person-list/person-list.component';
 import { PersonCardComponent } from './components/person-card/person-card.component';
 import { BasketModule } from './basket/basket.module';
 import { RecapComponent } from './components/recap/recap.component';
 import { NavComponent } from './components/nav/nav.component';
-import { HeaderComponent } from './components/header/header.component'
+import { HeaderComponent } from './components/header/header.component';
+import { FormDemoComponent } from './components/form-demo/form-demo.component'
 
 @NgModule({
   declarations: [
@@ -18,13 +19,15 @@ import { HeaderComponent } from './components/header/header.component'
     PersonCardComponent,
     RecapComponent,
     NavComponent,
-    HeaderComponent
+    HeaderComponent,
+    FormDemoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BasketModule
+    BasketModule,
+    ReactiveFormsModule
   ],
   providers: [], 
   bootstrap: [AppComponent]
